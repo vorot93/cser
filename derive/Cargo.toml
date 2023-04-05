@@ -1,0 +1,17 @@
+[package]
+name = "cser-derive"
+version = "0.1.0"
+edition = "2021"
+license = "MPL-2.0"
+description = "Procedural macros for cser"
+authors = ["Artem Vorotnikov <artem@vorotnikov.me>"]
+repository = "https://github.com/vorot93/cser"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+bytes = { version = "1", default-features = false }
+syn = "2"
+quote = "1"
+proc-macro2 = "1"

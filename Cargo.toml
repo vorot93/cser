@@ -1,0 +1,40 @@
+[package]
+name = "cser"
+version = "0.1.1"
+edition = "2021"
+license = "MPL-2.0"
+description = "CSER serialization format"
+authors = ["Artem Vorotnikov <artem@vorotnikov.me>"]
+repository = "https://github.com/vorot93/cser"
+
+[dependencies]
+anyhow = "1"
+arrayvec = "0.7"
+auto_impl = "1"
+bytes = "1"
+cser-derive = { version = "0.1", path = "derive", optional = true }
+derive_more = "0.99"
+ethereum-types = { version = "0.14", optional = true }
+ethnum = { version = "1", optional = true }
+thiserror = "1"
+
+[dev-dependencies]
+criterion = "0.4"
+cser-test = { path = ".", package = "cser", features = [
+    "derive",
+    "ethereum-types",
+    "ethnum",
+] }
+divrem = "1"
+hex-literal = "0.4"
+rand = "0.8"
+
+[features]
+derive = ["cser-derive"]
+
+[[bench]]
+name = "bench"
+harness = false
+
+[workspace]
+members = ["derive"]
