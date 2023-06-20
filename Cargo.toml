@@ -19,7 +19,7 @@ ethnum = { version = "1", optional = true }
 thiserror = "1"
 
 [dev-dependencies]
-criterion = "0.4"
+criterion = "0.5"
 cser-test = { path = ".", package = "cser", features = [
     "derive",
     "ethereum-types",
