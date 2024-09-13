@@ -85,8 +85,7 @@ fn read_uint64_bit_compact(bytes_r: &mut fast::Reader, size: usize) -> Result<u6
 
     let buf = bytes_r.read(size)?;
     for (i, &b) in buf.iter().enumerate() {
-        v |= u64::try_from(b).map_err(|_| Error::OverFlowError)?
-            << u64::try_from(8 * i).map_err(|_| Error::OverFlowError)?;
+        v |= u64::from(b) << u64::try_from(8 * i).map_err(|_| Error::OverFlowError)?;
         last = b;
     }
 

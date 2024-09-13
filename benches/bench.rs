@@ -1,7 +1,6 @@
 #![allow(unstable_name_collisions)]
 use criterion::*;
 use cser::*;
-use divrem::DivCeil;
 
 fn bench(c: &mut Criterion) {
     for bits in 1..=9 {
