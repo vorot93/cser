@@ -13,8 +13,8 @@ arrayvec = "0.7"
 auto_impl = "1"
 bytes = "1"
 cser-derive = { version = "0.1", path = "derive", optional = true }
-derive_more = "0.99"
-ethereum-types = { version = "0.14", optional = true }
+derive_more = { version = "1", features = ["deref"] }
+ethereum-types = { version = "0.15", default-features = false, optional = true }
 ethnum = { version = "1", optional = true }
 thiserror = "1"
 
@@ -25,7 +25,6 @@ cser-test = { path = ".", package = "cser", features = [
     "ethereum-types",
     "ethnum",
 ] }
-divrem = "1"
 hex-literal = "0.4"
 rand = "0.8"
 
